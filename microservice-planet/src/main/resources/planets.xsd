@@ -1,0 +1,93 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://microservice.com/planets"
+           xmlns:tns="http://microservice.com/planets"
+           elementFormDefault="qualified">
+
+    <xs:element name="createPlanetRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="planet" type="tns:planet"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createPlanetResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="createdPlanet" type="tns:planet"/>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePlanetRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="planetId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePlanetResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPlanetRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="planetId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPlanetResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="retrievedPlanet" type="tns:planet"/>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllPlanetsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="planets" type="tns:planet" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="status" type="xs:string"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="planet">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+
+            <xs:element name="dimensionX">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="0"/>
+                        <xs:pattern value="\d*[02468]$"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="dimensionY">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="0"/>
+                        <xs:pattern value="\d*[02468]$"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

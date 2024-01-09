@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="https://jakarta.ee/xml/ns/jaxb" if-exists="true" version="3.0">
+      
+    <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v4.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.01.06 a las 07:45:12 PM ART
+  -->
+      
+    <bindings xmlns:tns="http://microservice.com/planets" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="com.microservice.obstacle.services.planetclient"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="tns:createPlanetRequest">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.CreatePlanetRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:planet">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.Planet"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:createPlanetResponse">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.CreatePlanetResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:deletePlanetRequest">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.DeletePlanetRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:deletePlanetResponse">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.DeletePlanetResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:getPlanetRequest">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.GetPlanetRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:getPlanetResponse">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.GetPlanetResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:getAllPlanetsResponse">
+                  
+            <class ref="com.microservice.obstacle.services.planetclient.GetAllPlanetsResponse"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>

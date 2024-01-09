@@ -1,0 +1,32 @@
+eureka:
+  client:
+    register-with-eureka: false
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: planets
+          uri: http://localhost:8091
+          predicates:
+            - Path=/ws/**
+        - id: obstacles
+          uri: http://localhost:9090
+          predicates:
+            - Path=/api/obstacles/**
+        - id: rovers
+          uri: http://localhost:8092
+          predicates:
+            - Path=/api/rovers/**
+        - id: roverRemoteControl
+          uri: http://localhost:8092
+          predicates:
+            - Path=/api/rover-control/**

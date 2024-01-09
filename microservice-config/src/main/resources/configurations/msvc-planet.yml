@@ -1,0 +1,18 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: msvc-planet
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/microservice_planet_db
+    username: root
+    password:
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
