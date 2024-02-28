@@ -3,7 +3,6 @@ import com.microservice.obstacle.exceptions.ObstacleNotFoundException;
 import com.microservice.obstacle.exceptions.InvalidCoordinatesException;
 import com.microservice.obstacle.exceptions.PlanetNotFoundException;
 import com.microservice.obstacle.entities.Obstacle;
-
 import java.util.List;
 
 public interface ObstacleService {
@@ -25,15 +24,6 @@ public interface ObstacleService {
      * @throws ObstacleNotFoundException     If the obstacle is not found.
      */
     void deleteObstacle(Long obstacleId) throws ObstacleNotFoundException;
-
-    /**
-     * Gets an obstacle with the specified ID.
-     *
-     * @param obstacleId The ID of the obstacle to get.
-     * @return The found obstacle.
-     * @throws ObstacleNotFoundException If the obstacle is not found.
-     */
-    Obstacle getObstacle(Long obstacleId) throws ObstacleNotFoundException;
 
     /**
      * Returns all obstacles that are on a map.
